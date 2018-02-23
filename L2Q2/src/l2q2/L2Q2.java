@@ -1,5 +1,8 @@
 package l2q2;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author Chin Jia Xiong
@@ -7,23 +10,25 @@ package l2q2;
 public class L2Q2 {
 
     public static void main(String[] args) {
-        permuteString("String");
+        permuteString("abbc");
     }
     
     public static void permuteString(String txt){
-        permuteString("", txt);
+        Set<String> set = new HashSet();
+        permuteString("", txt, set);
+        for(String s: set) System.out.println(s);
     }
     
-    public static void permuteString(String start, String end){
+    public static void permuteString(String start, String end, Set set){
         if(end.length() == 2){
-            System.out.println(start + end);
+            set.add(start + end);
             String rev = swap(end);
-            System.out.println(start + rev);
+            set.add(start + rev);
         }
         else{
             for(int i=0; i<end.length(); i++){
                 String tmp = end.substring(0, i) + end.substring(i+1);
-                permuteString(start + Character.toString(end.charAt(i)), tmp);
+                permuteString(start + Character.toString(end.charAt(i)), tmp, set);
             }
         }
     }
