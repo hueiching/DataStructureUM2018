@@ -1,0 +1,2 @@
+For a bound type parameter, the occurences of the type parameter are restricted to
+extend the "bound" set.

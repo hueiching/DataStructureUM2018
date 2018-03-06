@@ -1,0 +1,3 @@
+Raw type is using a generic type without specifying a type parameter. It is unsafe
+because the parameter is treated as object, more prone to run-time error. It is
+allowed in Java to allow version compatibility to older version.
