@@ -41,5 +41,6 @@ public class FindMax {
         System.out.println(max(a));
         System.out.println(max(b));
         System.out.println(max(c));
+        System.out.println(max((new Circle[]{new FindMax().new Circle(2.0), new FindMax().new Circle(3.0), new FindMax().new Circle(4.0)})));
     }
 }
